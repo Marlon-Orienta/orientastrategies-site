@@ -6,10 +6,17 @@
 <title>Orienta Strategies | B2B video and marketing strategy</title>
 <meta name="description" content="B2B video editing, content and go-to-market strategy for small and mid-sized companies. Webinars, trainings, product how-tos and reels that bring in leads. Founder-led by Marlon Escobar.">
 <meta property="og:title" content="Orienta Strategies | B2B video and marketing strategy">
-<meta property="og:description" content="B2B video that turns webinars and product demos into leads.">
+<meta property="og:description" content="B2B video services that turn webinars, trainings and product demos into leads.">
+<meta property="og:type" content="website">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <meta property="og:image" content="https://www.orientastrategies.com/assets/og-image.png">
 <meta property="og:url" content="https://www.orientastrategies.com/">
-<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<!-- Analytics: paste the Cloudflare Web Analytics snippet (or GA4 tag) here -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -49,7 +56,7 @@
   .hero::before{content:"";position:absolute;right:-220px;top:-180px;width:760px;height:760px;background:radial-gradient(circle,rgba(93,66,150,.35),rgba(23,15,43,0) 65%);pointer-events:none}
   .hero-grid{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
   .eyebrow{display:inline-block;font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--p5);margin-bottom:20px}
-  h1{font-size:clamp(38px,5.4vw,62px);line-height:1.05;letter-spacing:-.02em;font-weight:700;margin-bottom:24px}
+  h1{font-size:clamp(36px,4.8vw,54px);line-height:1.05;letter-spacing:-.02em;font-weight:700;margin-bottom:24px}
   h1 em{font-style:normal;color:var(--p5)}
   .lead{font-size:20px;color:var(--muted);max-width:560px;margin-bottom:36px}
   .cta-row{display:flex;flex-wrap:wrap;gap:14px}
@@ -109,17 +116,38 @@
   .foot-links a{text-decoration:none;color:var(--steel)}
   .foot-links a:hover{color:var(--text)}
 
+  .proof{margin-top:28px;font-size:15px;color:var(--silver-2);display:flex;align-items:center;gap:10px}
+  .proof::before{content:"";width:28px;height:1px;background:var(--p5)}
+  .nav .btn{white-space:nowrap}
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .work-item h3{font-size:19px;font-weight:600;margin:16px 0 6px}
+  .work-item p{color:var(--muted);font-size:15px}
+  .yt{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:#000;cursor:pointer;padding:0;width:100%;display:block}
+  .yt img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .2s,transform .4s}
+  .yt:hover img{opacity:1;transform:scale(1.03)}
+  .yt .play{position:absolute;inset:0;margin:auto;width:64px;height:64px;border-radius:50%;background:rgba(138,108,201,.92);display:grid;place-items:center;transition:transform .2s}
+  .yt:hover .play{transform:scale(1.08)}
+  .yt .play svg{width:24px;height:24px;fill:#120B22;margin-left:4px}
+  .yt iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .work-note a{color:var(--p5);text-decoration:none;font-weight:600}
+  .work-note a:hover{text-decoration:underline}
+  .portrait img.photo{width:100%;height:100%;object-fit:cover}
+  .step a{color:var(--p5)}
+  .price-list{list-style:none;margin-top:18px;display:grid;gap:4px}
+  .price-list li{font-size:14px;color:var(--p5);font-weight:600}
   @media (max-width:900px){
+    .work-grid{grid-template-columns:1fr}
     .hero{padding:64px 0 72px}
     .hero-grid,.about-grid{grid-template-columns:1fr}
-    .hero-mark{width:220px;order:-1;justify-self:start}
+    .hero-mark{width:140px;order:-1;justify-self:start}
     .cards{grid-template-columns:1fr}
     .steps{grid-template-columns:1fr 1fr}
     .nav-links a:not(.btn){display:none}
     section{padding:72px 0}
     .portrait{max-width:320px}
   }
-  @media (max-width:520px){.steps{grid-template-columns:1fr}}
+  @media (max-width:520px){.steps{grid-template-columns:1fr}.nav .btn .long{display:none}.brand span{font-size:12px;letter-spacing:.14em}}
+  @media (min-width:521px){.nav .btn .short{display:none}}
 </style>
 </head>
 <body>
@@ -127,7 +155,7 @@
 <header>
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="Orienta Strategies home">
-      <img src="assets/mark.png" alt="">
+      <img src="assets/mark.svg" alt="">
       <span>Orienta Strategies</span>
     </a>
     <nav class="nav-links">
@@ -135,7 +163,7 @@
       <a href="#work">Work</a>
       <a href="#about">About</a>
       <a href="#process">Process</a>
-      <a class="btn btn-primary" href="#contact">Start a project</a>
+      <a class="btn btn-primary" href="#contact"><span class="long">Start a project</span><span class="short">Contact</span></a>
     </nav>
   </div>
 </header>
@@ -145,14 +173,15 @@
     <div class="wrap hero-grid">
       <div>
         <span class="eyebrow">B2B video &middot; Content &middot; Go-to-market</span>
-        <h1>B2B video that turns webinars and product demos into <em>leads.</em></h1>
-        <p class="lead">Then I connect it to a marketing system that points everything in one direction.</p>
+        <h1>B2B video services that turn webinars, trainings, and product demos into <em>leads.</em></h1>
+        <p class="lead">Connecting it to a marketing system that points everything in one direction.</p>
         <div class="cta-row">
-          <a class="btn btn-primary" href="#contact">Start a project &rarr;</a>
+          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdrBdp5-t4-uo4VtfQyAwB90QdLvYhd18safuoUjsuHDasFnw/viewform" target="_blank" rel="noopener">Start a project &rarr;</a>
           <a class="btn btn-ghost" href="#work">See recent work</a>
         </div>
+        <p class="proof">Former Global Marketing Manager, Emerson Automation Solutions</p>
       </div>
-      <img class="hero-mark" src="assets/mark-stone.png" alt="Orienta Strategies compass mark">
+      <img class="hero-mark" src="assets/mark-stone.svg" alt="Orienta Strategies compass mark">
     </div>
   </div>
 
@@ -190,18 +219,40 @@
         <p class="kicker">Recent work</p>
         <h2>See the edit.</h2>
       </div>
-      <div class="video">
-        <iframe src="https://www.youtube-nocookie.com/embed/zhvNzjuciew?rel=0" title="Orienta Strategies reel" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
+      <div class="work-grid">
+        <div class="work-item">
+          <button class="yt" data-id="zhvNzjuciew" aria-label="Play: Location highlight">
+            <img src="https://i.ytimg.com/vi/zhvNzjuciew/hqdefault.jpg" alt="" loading="lazy">
+            <span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+          </button>
+          <h3>Location highlight</h3>
+          <p>Live-action reel edited from on-location footage.</p>
+        </div>
+        <div class="work-item">
+          <button class="yt" data-id="EYpKXIKuNMY" aria-label="Play: Product expert">
+            <img src="https://i.ytimg.com/vi/EYpKXIKuNMY/hqdefault.jpg" alt="" loading="lazy">
+            <span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+          </button>
+          <h3>Product expert</h3>
+          <p>A product expert walks through the product on camera, cut into a tight, shareable reel.</p>
+        </div>
+        <div class="work-item">
+          <button class="yt" data-id="45YpgOtj_hU" aria-label="Play: On-site hosting">
+            <img src="https://i.ytimg.com/vi/45YpgOtj_hU/hqdefault.jpg" alt="" loading="lazy">
+            <span class="play"><svg viewBox="0 0 24 24"><path d="M6 4l14 8-14 8z"/></svg></span>
+          </button>
+          <h3>On-site hosting</h3>
+          <p>A hosted segment shot on site, edited to keep the pace up and the message clear.</p>
+        </div>
       </div>
-      <p class="work-note">Full playlists available on request.</p>
+      <p class="work-note">More on <a href="https://www.youtube.com/@OrientaStrategies" target="_blank" rel="noopener">YouTube &rarr;</a></p>
     </div>
   </section>
 
   <section id="about">
     <div class="wrap about-grid">
       <div class="portrait">
-        <!-- Swap for a headshot: <img src="assets/headshot.jpg" alt="Marlon Escobar" style="width:100%;height:100%;object-fit:cover"> -->
-        <img class="mark" src="assets/mark.png" alt="">
+        <img class="photo" src="assets/headshot.jpg" alt="Marlon Escobar" onerror="this.outerHTML='<img class=&quot;mark&quot; src=&quot;assets/mark.svg&quot; alt=&quot;&quot;>'">
       </div>
       <div>
         <p class="kicker">About</p>
@@ -225,7 +276,7 @@
         <h2>Simple from the first message.</h2>
       </div>
       <div class="steps">
-        <div class="step"><span class="num">01</span><h3>Tell me what you need</h3><p>A short project form.</p></div>
+        <div class="step"><span class="num">01</span><h3>Tell me what you need</h3><p>A <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrBdp5-t4-uo4VtfQyAwB90QdLvYhd18safuoUjsuHDasFnw/viewform" target="_blank" rel="noopener">short project form</a>.</p></div>
         <div class="step"><span class="num">02</span><h3>Quick call, clear quote</h3><p>30&ndash;60 minutes, then a fixed price and timeline.</p></div>
         <div class="step"><span class="num">03</span><h3>Draft, refine, deliver</h3><p>A draft, two revision rounds, final files.</p></div>
         <div class="step"><span class="num">04</span><h3>Build from there</h3><p>Turn one project into a system that keeps bringing in leads.</p></div>
@@ -237,10 +288,9 @@
     <div class="wrap">
       <p class="kicker">Contact</p>
       <h2>Let's get your next video working harder.</h2>
-      <p>Tell me about your project and I'll reply within one business day.</p>
+      <p>Fill out the short project form and I'll reply within one business day. Prefer email? That works too.</p>
       <div class="cta-row">
-        <!-- Swap href for the intake Google Form link when it's ready -->
-        <a class="btn btn-primary" href="mailto:hello@orientastrategies.com?subject=New%20project">Start a project &rarr;</a>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdrBdp5-t4-uo4VtfQyAwB90QdLvYhd18safuoUjsuHDasFnw/viewform" target="_blank" rel="noopener">Start a project &rarr;</a>
       </div>
       <a class="email" href="mailto:hello@orientastrategies.com">hello@orientastrategies.com</a>
     </div>
@@ -252,10 +302,23 @@
     <span>&copy; 2026 Orienta Strategies LLC &middot; Warren, New Jersey</span>
     <div class="foot-links">
       <a href="https://www.linkedin.com/company/orienta-strategies" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://youtu.be/zhvNzjuciew" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.youtube.com/@OrientaStrategies" target="_blank" rel="noopener">YouTube</a>
+      <a href="mailto:hello@orientastrategies.com">Email</a>
     </div>
   </div>
 </footer>
 
+<script>
+document.querySelectorAll('.yt').forEach(function(b){
+  b.addEventListener('click',function(){
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.id+'?autoplay=1&rel=0';
+    f.title=b.getAttribute('aria-label');
+    f.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen';
+    f.allowFullscreen=true;
+    b.replaceChildren(f);
+  });
+});
+</script>
 </body>
 </html>
